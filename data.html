@@ -2,75 +2,111 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>used community</title>
-    <link href="design/design.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>used community</title>
+  <link href="design/design.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="script/script.js"></script>
 </head>
 
 <body>
-    <div class="card-container">
-        <div class="cardT">
-        <a href=https://used.community target="_blank"><img class="logo" src="pictures/used-logo-white-top.png" alt="Logo"></a>
+  <div class="container">
+    <div class="navbar">
+      <a href="https://www.used.community" target="_blank">
+        <img src="pictures/used-logo-white-top.png" alt="logo">
+      </a>
+      
+      <nav>
+        <ul>
+          <li><a href="index.html">used</a></li>
+          <li><a href="data.html">requirements</a></li>
+          <li><a href="https://github.com/usedcommunity/used/wiki" target="_blank">wiki</a></li>
+          <li><a href="https://mastodon.social/@usedcommunity" target="_blank">blog</a></li>
+        </ul>
+      </nav>
     </div>
 
-    <div class="menu-box">
-        <a class="menu-button aktuell" href="index.html"><h2>tools</h2></a>
-        <a class="menu-button" href="data.html"><h2>sustainability requirements</h2></a>
-        <a class="menu-button" href="about.html"><h2>about used</h2></a>
-    </div>
-    
-    <div class="card">
-        <h1><center>Daten zu Nachhaltigkeitsanforderungen</center></h1>
-        <p>Nachhaltigkeitsanforderungen müssen für alle Menschen und Organisationen aufwendig beschafft
-            und in das eigene Verständnis sowie die bestehede Informationsarchitektur der Organisation übersetzt werden.
-            Das sind Quellen wie Gesetze, Zertifikate, Standards, Normen, Richtlinien, referenzierte Modelle, wissenschaftliche Literatur und viele weitere Quellen.
-        </p> 
-        <p>   
-            Auf der Grundlage extern referenzierter Quellen stellt die used community ein umfassendes Metadatenmodell zu Nachhaltigkeitsanforderungen zur Verfügung.
-            Menschen und Organisationen sollen im Übergang von abstrakten Nachhaltigkeitsmodellen und -zielen hin zur konkreten Entwicklung nachhaltiger Produkte und Geschäftsmodelle
-            durch bedarfsgerechte Bereitstellung von Nachhaltigkeitsanforderungen unterstützt werden. 
-            Aufgrund der Komplexität ist es daher erforderlich datenbasierte und analytische Methoden auf der Grundlage ganzheitlicher Modellansätze zu erforschen und zu entwickeln.
-        </p>
-        <p>
-        </p>
-        <table class="link-table">
-            <tr>
-                <th>Datei</th>
-                <th>Beschreibung</th>
-                <th>Version</th>
-                <th>Datum</th>
-                <th>Herunterladen</th>
-            </tr>
-            <tr>
-                <td>Gesetzeliste</td>
-                <td>Datengrundlage für das Tool "Gesetzesfinder" mit der Analyse der restriktiven und lösungsorienten Anforderungen</td>
-                <td>1.0</td>
-                <td>01.03.2024</td>
-                <td><a href="https://github.com/usedcommunity/LeSuReFo/raw/main/editors/datag.xlsx">Download</a></td>
-            </tr>
-            <tr>
-                <td>Quellenliste</td>
-                <td>Alle bei used genutzten Quellen</td>
-                <td>1.0</td>
-                <td>23.04.2024</td>
-                <td><a href="https://github.com/usedcommunity/used-landing-page/raw/main/editors/sources.xlsx">Download</a></td>
-            </tr>
-        </table>
-
-    </div>
+    <div class="content">     
         
-    <div class="sb-Container"> 
-        <a class="share-button" id="shareButton1" href=https://used.community target="_blank"><img src="pictures/used-logo-rgb-buttom.png" alt="Bild 1"></a>
-        <a class="share-button" id="shareButton2" href=https://github.com/usedcommunity target="_blank"><img src="pictures/github-mark.png" alt="Bild 2"></a>
-        <a class="share-button" id="shareButton3" href=imp.html target="_blank">Imprint</a>
-        <a class="share-button" id="shareButton3" href=privacy.html target="_blank">privacy</a>
-        <a class="share-button" onclick="openEmail()">CONTACT</a>        
+      <div class="description-head">
+        <h1>Data of sustainability requirements</h1>
+      </div>
+
+      <div class="description-text">
+        Für die Tools werden mehrere unterschiedliche Datensätze referenziert, erzeugt, genutzt, umgewandelt oder visualisiert. 
+        Diese Datensätze werden in der nachfolgenden Tabelle verlinkt, um zu experimentieren und eigene Ideen zu entwickeln. 
+        Aus den Ideen oder den Bedarfen der Projektpartner resultieren daher auch Syntax und Semantik.
+        Weitere Informationen findest Du 
+        <a href="https://github.com/usedcommunity/used/wiki#gegenstand-nachhaltigkeitsanforderungen"style="color: white; font-weight: bold; text-decoration: none;">hier.</a>
+      </div>
+
+      <div class="description-text-data">
+
+        <table class="table">
+          <tr>
+            <th>Datei</th>
+            <th>Beschreibung</th>
+            <th>Art</th>
+            <th>Version</th>
+            <th>Datum</th>
+            <th>Herunterladen</th>
+          </tr>
+          <tr>
+            <td>Gesetzeliste</td>
+            <td>Datengrundlage für das Tool "Gesetzesfinder" mit der Analyse der restriktiven und lösungsorienten Anforderungen aus Gesetzen und damit verbundenen Referenzen wie beispielsweise Richtlinien.</td>
+            <td>Rohdaten</td>
+            <td>1.0</td>
+            <td>01.03.2024</td>
+            <td><a href="https://github.com/usedcommunity/LeSuReFo/raw/main/editors/datag.xlsx">Download</a></td>
+          </tr>
+          <tr>
+            <td>Zertifikateliste</td>
+            <td>Auflistung relevanter Zertifikate im Kontext der Produktentstehung. Datengrundlage für das Tool "Zertifikatefinder".</td>
+            <td>Rohdaten</td>
+            <td>1.0</td>
+            <td>14.08.2024</td>
+            <td>Entwicklung</td>
+          </tr>
+            <td>Standardisierungsliste</td>
+            <td>Zusammenfassung von Normen, Standards, Richtlinien und Leitfäden für die Produktentwicklung.</td>
+            <td>Rohdaten</td>
+            <td>1.0</td>
+            <td>14.08.2024</td>
+            <td>Entwicklung</td>
+          </tr>
+          <tr>
+            <td>Graphdata</td>
+            <td>Dokumentationen aller Knotenbeziehungen bei used als Kantenliste für die Graphvisualisierung.</td>
+            <td>Rohdaten</td>
+            <td>1.0</td>
+            <td>17.06.2024</td>
+            <td>Entwicklung</td>
+          </tr>
+          <tr>
+            <td>Quellenliste</td>
+            <td>Alle bei used genutzten Quellen</td>
+            <td>Rohdaten</td>
+            <td>1.0</td>
+            <td>23.04.2024</td>
+            <td><a href="https://github.com/usedcommunity/used-landing-page/raw/main/editors/sources.xlsx">Download</a></td>
+          </tr>
+        </table>
+      </div>
     </div>
-
-    <p class="impress">© used.community</p>
     
-    <script src="script/script.js"></script>
-
+    <div class="footer"> 
+      <div class="link-container"> 
+        <a class="share-button" id="shareButton1" href="https://used.community" target="_blank"><img src="pictures/used-logo-rgb-buttom.png" alt="Bild 1"></a>
+        <a class="share-button" id="shareButton3" href="imp.html" target="_blank">Imprint</a>
+        <a class="share-button" id="shareButton4" href="privacy.html" target="_blank">privacy</a>
+        <a class="share-button" onclick="openEmail()">contact</a>        
+      </div>
+        
+      <div class="imp-container">
+        <p class="impress">© used.community</p> 
+      </div>
+    </div>
+  </div>
 </body>
 </html>

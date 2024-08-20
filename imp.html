@@ -6,63 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>used community</title>
     <link href="design/design.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script/script.js"></script>
 </head>
 
 <body>
-    <div class="card-container">
-        <div class="cardT">
-        <a href=https://used.community target="_blank"><img class="logo" src="pictures/used-logo-white-top.png" alt="Logo"></a>
+  <div class="container">
+    <div class="navbar">
+      <a href="https://www.used.community" target="_blank">
+        <img src="pictures/used-logo-white-top.png" alt="logo">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">used</a></li>
+          <li><a href="data.html">requirements</a></li>
+          <li><a href="https://github.com/usedcommunity/used/wiki" target="_blank">wiki</a></li>
+          <li><a href="https://mastodon.social/@usedcommunity" target="_blank">blog</a></li>
+        </ul>
+      </nav>
     </div>
 
-    <div class="menu-box">
-        <a class="menu-button aktuell" href="index.html"><h2>tools</h2></a>
-        <a class="menu-button" href="data.html"><h2>sustainability requirements</h2></a>
-        <a class="menu-button" href="about.html"><h2>about used</h2></a>
-</div>
-
-    
-    <div class="cardleft">
-        <h2><center>Impressum</center></h2>
-        </p>
-        <p>
-        <p><b>Allgemeine Informationen</b></vernetzen>
-        </p>
-        <p>
-        </p>
-        <p>
-            <b>Name und Anschrift</b><br>
-            Niels Demke <br>
-            Helmut Schmidt Universität<br>
-            Holstenhofweg 85<br>
-            22043 Hamburg<br>
-            E-Mail-Adresse: contact@used.community<br>
-            Telefon: (040) 6541-3550<br>
-            <p>
-            </p>
-            <b>Vertretungsberechtigt</b><br>
-            Niels Demke<br>
-            <p>
-            </p>
-            <b>Inhaltlich verantwortlich</b><br>
-            Niels Demke<br>
-            Helmut Schmidt Universität<br>
-            Holstenhofweg 85<br>
-            22043 Hamburg<br>
-            <p>
-            </p>
-        </p>    
-    </div>
+    <div class="content">     
         
-    <div class="sb-Container"> 
-        <a class="share-button" id="shareButton1" href=https://used.community target="_blank"><img src="pictures/used-logo-rgb-buttom.png" alt="Bild 1"></a>
-        <a class="share-button" id="shareButton2" href=https://github.com/usedcommunity target="_blank"><img src="pictures/github-mark.png" alt="Bild 2"></a>
-        <a class="share-button" id="shareButton3" href=imp.html target="_blank">Imprint</a>
-        <a class="share-button" id="shareButton3" href=privacy.html target="_blank">privacy</a>
-        <a class="share-button" onclick="openEmail()">CONTACT</a>        
-    </div>
+      <div class="description-head">
+            <h1>Imprint</h1>
+      </div>
 
-    <p class="impress">© used.community</p>
+      <div class="description-text-privacy">
+        <p>        
+          <h2>Address</h2>
+          Niels Demke <br>
+          Helmut-Schmidt-Universität<br>
+          Holstenhofweg 85<br>
+          22043 Hamburg<br>
+
+          <h2>Contact</h2>
+          contact@used.community<br>
+          <p>
+          </p>
+          
+          <h2>Represented by</h2>
+          Niels Demke, Wilke Willems<br>
+          <p>
+          </p>
+          
+          <h2>Responsible according to §55 Abs. 2 RStV</h2>
+          Niels Demke<br>
+          Helmut-Schmidt-Universität<br>
+          Holstenhofweg 85<br>
+          22043 Hamburg<br>
+          <p>
+          </p>
+
+          <h2>Disclaimer:</h2>
+
+          <h2>Liability for content</h2>
+          The contents of our pages have been created with the greatest care.  
+          We cannot assume any liability for the correctness, completeness and topicality of the contents.
+          However, we are not obliged to monitor transmitted or stored third-party information or to analyze it for circumstances that indicate illegal activity. Obligations to remove or block the use of information in accordance with general legislation remain unaffected by this. However, liability in this respect is only possible from the time of knowledge of a specific infringement. 
+          As soon as we become aware of such infringements, we will remove this content immediately.
+          <p>
+          </p>
+
+          <h2>Liability for external links</h2>
+          Our website contains links to external third-party websites over whose content 
+          we have no influence. Therefore, we cannot accept any liability for this third-party content. 
+          The respective provider or operator of the pages is always responsible for the content 
+          of the linked pages. The linked pages were checked for possible legal violations 
+          at the time of linking. Illegal content was not recognizable at the time of linking. 
+          However, permanent monitoring of the content of the linked pages is not reasonable without 
+          concrete evidence of an infringement. If we become aware of any legal infringements, 
+          we will remove such links immediately.
+          <p>
+          </p>
+        </p>    
+      </div>
+    </div>
     
-    <script src="script/script.js"></script>
+    <div class="footer"> 
+      <div class="link-container"> 
+        <a class="share-button" id="shareButton1" href="https://used.community" target="_blank"><img src="pictures/used-logo-rgb-buttom.png" alt="Bild 1"></a>
+        <a class="share-button" id="shareButton3" href="imp.html" target="_blank">Imprint</a>
+        <a class="share-button" id="shareButton4" href="privacy.html" target="_blank">privacy</a>
+        <a class="share-button" onclick="openEmail()">contact</a>        
+      </div>
+        
+      <div class="imp-container">
+        <p class="impress">© used.community</p> 
+      </div>
+    </div>
+  </div>
 </body>
 </html>

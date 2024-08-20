@@ -1,62 +1,375 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>used community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script/script.js"></script>
     <link href="design/design.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="card-container">
-        <div class="cardT">
-        <a href=https://used.community target="_blank"><img class="logo" src="pictures/used-logo-white-top.png" alt="Logo"></a>
-        </div>
+  <div class="container">
+    <div class="navbar">
+      <a href="https://www.used.community" target="_blank">
+        <img src="pictures/used-logo-white-top.png" alt="logo">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">used</a></li>
+          <li><a href="data.html">requirements</a></li>
+          <li><a href="https://github.com/usedcommunity/used/wiki" target="_blank">wiki</a></li>
+          <li><a href="https://mastodon.social/@usedcommunity" target="_blank">blog</a></li>
+        </ul>
+      </nav>
+    </div>
 
-        <div class="menu-box">
-                <a class="menu-button aktuell" href="index.html"><h2>tools</h2></a>
-                <a class="menu-button" href="data.html"><h2>sustainability requirements</h2></a>
-                <a class="menu-button" href="about.html"><h2>about used</h2></a>
-        </div>
-        
-        <div class="card">
-            <h1>Tools für Nachhaltigkeitsanforderungen</h1>
-            <p>Du interessierst dich für Nachhaltigkeit und möchtest einen Überblick darüber gewinnen, 
-                welche Nachhaltigkeitsanforderungen für dein Unternehmen und deine Produkte relevant sein könnten? 
-                Dann machen es dir die folgenden Tools der used.Community einfach. 
-                Von abstrakten Nachhaltigkeitsmodellen bis zur konkreten Umsetzung von Nachhaltigkeitsanforderungen werden verschiedene Tools als Open-Source-Lösungen bereitgestellt und kontinuierlich weiterentwickelt.</p>
-            <div class="button-container">
-                <div class="tool"><h3>Gesetzesfinder</h3>
-                    Schau dir an, welche Gesetze zum Thema Nachhaltigkeit für dein Unternehmen relevant sind oder es in Zukunft werden, und verschaffe dir einen Überblick über die resultierenden Anforderungen.
-                    <br>
-                    <a class="button margin" href="https://usedcommunity.github.io/LeSuReFo">Los Gehts!</a>
-                </div>
-                <div class="tool" ><h3>uZiMo</h3>
-                    Das used Zielmodell (uZiMo), für die strategisch Produktplanung, nutzt Nachhaltigkeitsmodelle für die Analyse von Problemverschiebungen in den Wirkbereichen. Zielkonflikte können somit frühzeitig aufgedeckt werden.
-                    <br>
-                    <a class="button margin" href="https://used.community ">In Arbeit!</a>
-                </div>
-                <div class="tool" ><h3>Zertifind</h3>
-                    Zeige der Welt, wie nachhaltig du bist, und erhalte nebenbei die Chance, mit deiner Nachhaltigkeit zu werben. Mit unserem Zertifikatsfinder findest du die Zertifikate, die für dein Unternehmen infrage kommen.
-                    <br>
-                    <a class="button margin" href="https://used.community ">In Arbeit!</a>
-                </div>
-            </div>
-        </div> 
-    
-        <div class="sb-Container"> 
-            <a class="share-button" id="shareButton1" href=https://used.community target="_blank"><img src="pictures/used-logo-rgb-buttom.png" alt="Bild 1"></a>
-            <a class="share-button" id="shareButton2" href=https://github.com/usedcommunity target="_blank"><img src="pictures/github-mark.png" alt="Bild 2"></a>
-            <a class="share-button" id="shareButton3" href=imp.html target="_blank">Imprint</a>
-            <a class="share-button" id="shareButton3" href=privacy.html target="_blank">privacy</a>
-            <a class="share-button" onclick="openEmail()">CONTACT</a>        
-        </div>
-
-        <p class="impress">© used.community</p>
-
+    <div class="content">   
+      <div class="description-head">
+        <h1>Manage your sustainability requirements with scientific support</h1>
+      </div> 
+      
+      <div class="description-text">
+        Du interessierst dich für Nachhaltigkeit und möchtest einen Überblick darüber gewinnen, 
+        welche Nachhaltigkeitsanforderungen für dein Unternehmen, deine Ideen und Deine Produkte relevant sein könnten?
+        Bei used werden bedarfsgerechte Tools, Methoden und Prozesse nach wissenschaftlichen Prinzipien entwickelt, 
+        um die Übersetzung von Nachhaltigkeitsanforderungen in die Praxis bestmöglich zu unterstützen. Weitere Informationen findest Du 
+        <a href="https://github.com/usedcommunity/used/wiki"style="color: white; font-weight: bold; text-decoration: none;">hier.</a>
+      </div>
     </div>
     
-    <script src="script/script.js"></script>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Suche nach Apps...">
+      <button onclick="searchApps()">Suchen</button>
+    </div>
+
+    <div class="tool-filter-container">
+      <div class="filter-buttons">
+
+        <button class="button" onclick="filterApps('')">Alle</button>
+
+        <!-- Datensätze -->
+        <button class="button" onclick="filterApps('anforderung')">Anforderungen</button>
+        <button class="button" onclick="filterApps('gesetze')">Gesetze</button>
+        <button class="button" onclick="filterApps('standards')">Normen, Standards, Richtlinien</button>
+        <button class="button" onclick="filterApps('ziele')">Nachhaltigsmodelle mit Zielen</button>
+        <button class="button" onclick="filterApps('zertifikate')">Zertifikate</button>
+        <button class="button" onclick="filterApps('material')">Stoffe und Materialien</button>
+        <button class="button" onclick="filterApps('kreislauf')">Kreisläufe</button>
+      
+        <!-- frühe Phase -->
+        <button class="button" onclick="filterApps('produktplanung')">Produktplanung</button>
+        <button class="button" onclick="filterApps('strategie')">Strategie</button>
+        <button class="button" onclick="filterApps('geschäft')">Geschäft</button>
+        <button class="button" onclick="filterApps('forschung')">Forschung</button>
+        <button class="button" onclick="filterApps('marketing')">Marketing</button>
+        <button class="button" onclick="filterApps('vertrieb')">Vertrieb</button>
+    
+        <!-- Phases -->
+        <button class="button" onclick="filterApps('produktentwicklung')">Produktentwicklung</button>
+        <button class="button" onclick="filterApps('it')">IT</button>
+        <button class="button" onclick="filterApps('produktion')">Produktion</button>
+        <button class="button" onclick="filterApps('logistik')">Logistik</button>
+        <button class="button" onclick="filterApps('beschaffung')">Beschaffung</button>
+        <button class="button" onclick="filterApps('nutzung')">Nutzung</button>
+        <button class="button" onclick="filterApps('werkstatt')">Werkstatt</button>
+        <button class="button" onclick="filterApps('verwertung')">Verwertung</button>
+
+        <!-- methods -->
+        <button class="button" onclick="filterApps('entwicklungssystem')">MBSE-Entwicklungssystem</button>
+        <button class="button" onclick="filterApps('kontext')">Kontextanalyse</button>
+        <button class="button" onclick="filterApps('funktion')">Funktionsanalyse</button>
+        <button class="button" onclick="filterApps('bewertung')">Bewertungsmethoden</button>
+        <button class="button" onclick="filterApps('org')">Organisationsentwicklung</button>
+        <button class="button" onclick="filterApps('quali')">Qualifikationsplan</button>
+        <button class="button" onclick="filterApps('update')">Update</button>
+    
+      </div>
+    </div>
+  
+
+   <!--  
+    
+   "anforderung, gesetze, standards, ziele, zertifikate, material, kreislauf, 
+    produktplanung, strategie, geschäft, forschung, marketing, vertrieb, 
+    produktentwicklung, it, produktion, logistik, beschaffung, nutzung, werkstatt, 
+    verwertung, entwicklungssystem, kontext, funktion, bewertung, org, quali, update"
+    
+    -->
+
+
+    <div class="apps-container" id="appContainer">
+        <div class="apps">
+          
+          <div class="tool" data-tags= "anforderung, gesetze, produktplanung, strategie, geschäft, marketing, vertrieb, produktentwicklung, 
+            it, produktion, logistik, beschaffung, nutzung, werkstatt, verwertung, entwicklungssystem, kontext, funktion, bewertung, org, quali">
+            <div class="contentbox">
+              <div class="text-box">
+                  <h3>Gesetzefinder</h3>
+                  Schau dir an, welche Gesetze zum Thema Nachhaltigkeit für dein Unternehmen relevant sind 
+                  oder es in Zukunft werden könnten, und verschaffe dir einen Überblick über die resultierenden Anforderungen.
+              </div>
+
+              <div class="image-box">
+                <img src="pictures/tools/laws.png" class="top-right-image" >
+              </div>
+            </div>
+            <div class="buttons">
+              <a class="button-final margin" href="https://usedcommunity.github.io/LeSuReFo">start</a>
+            </div>
+          </div>
+          
+          <div class="tool" data-tags="anforderung, ziele, produktplanung, strategie, geschäft, forschung, produktentwicklung, produktion, logistik, beschaffung, nutzung, werkstatt, 
+            verwertung, entwicklungssystem, kontext, bewertung, org, quali">
+            <div class="contentbox">
+              <div class="text-box">
+                <h3>used Zielsystem</h3>
+                Wissenschaftliche Nachhaltigkeitsmodelle stellen 
+                die Grundlage für die Bewertung der Wirksamkeit von Maßnahmen dar.
+                Das used Zielsystem leitet aus bekannten Modellen Zielgrößen für die Produktentstehung ab 
+                und bereitet diese übersichtlich auf.
+              </div>
+              <div class="image-box">
+              </div>
+            </div>
+            <div class="buttons">
+              <a class="button margin" href="https://used.community">in entwicklung</a>
+            </div>
+          </div>
+
+          <div class="tool" data-tags="anforderung, gesetze, standards, zertifikate, produktplanung, strategie, marketing, vertrieb, produktentwicklung, it, 
+            produktion, logistik, beschaffung, nutzung, werkstatt, verwertung, bewertung, org, quali">
+            <div class="contentbox">
+              <div class="text-box">
+                <h3>Zertifikatefinder</h3>
+                Zeige der Welt, wie nachhaltig du bist, und erhalte nebenbei die Chance, 
+                mit deiner Nachhaltigkeit zu werben. Mit unserem Zertifikatsfinder findest du die Zertifikate, 
+                die für dein Unternehmen infrage kommen.
+              </div>
+              <div class="image-box">
+              </div>
+            </div>
+            <div class="buttons">
+              <a class="button margin" href="https://used.community">in entwicklung</a>
+            </div>
+          </div>
+
+
+          <div class="tool" data-tags="anforderung, produktplanung, strategie, geschäft, forschung, 
+            produktentwicklung, it, produktion, logistik, beschaffung, nutzung, werkstatt, 
+            verwertung, entwicklungssystem, kontext, funktion">
+            <div class="contentbox">
+              <div class="text-box">
+                <h3>Kontextanalyse</h3>
+                Die Kontextanalyse ist einer der ersten Schritte in einem Entwicklungsprojekt.
+                So kann das Projektfeld und die Identifikation und Spezifikation von Anforderungen 
+                sowie die früherkennung von Risiken frühzeitig unterstützt werden.
+              </div>
+              <div class="image-box">
+              </div>
+            </div>
+            <div class="buttons">
+              <a class="button margin" href="https://used.community">in planung</a>
+            </div>
+          </div>
+
+          <div class="tool" data-tags="anforderung, standards, material, entwicklungssystem">
+            <div class="contentbox">
+              <div class="text-box">
+                <h3>Übersichtsliste zu Normen, Standards und Richtlinien</h3>
+                Normen, Standards und Richtlinien erfassen den Stand der Technik 
+                und stellen Anforderungen für Unternehmen, Produkte und Dienstleistungen dar.
+                Hier wird eine Übersicht über relevante Organisationen und deren Nachhaltigkeitsanforderungen gegeben.
+              </div>
+              <div class="image-box">
+              </div>
+            </div>
+            <div class="buttons">
+                <a class="button margin" href="https://used.community">in planung</a>
+            </div>
+          </div>
+
+          <div class="tool" data-tags="standards, material, kreislauf, 
+            produktplanung, strategie,
+            produktentwicklung, produktion, logistik, beschaffung, nutzung, werkstatt, 
+            verwertung, bewertung, update">
+            <div class="contentbox">
+              <div class="text-box">
+                <h3>Kreislaufbewertungstool</h3>
+                Sie wollen eine Kreislaufbewertung durchführen, 
+                um konkrete Produktanforderungen oder strategische Unternehmensziele abzuleiten?
+                Im Kreislaufbewertungstool werden aktuelle Bewertungsstandards zusammengefasst
+                und für die praktische Anwendung bereitgestellt.
+              </div>
+              <div class="image-box">
+              </div>
+            </div>
+            <div class="buttons">
+                <a class="button margin" href="https://used.community">idee</a>
+            </div>
+          </div>
+
+          <div class="tool" data-tags= "anforderung, ziele, it">
+            <div class="contentbox">
+              <div class="text-box">
+                <h3>Anforderungsgraph</h3>
+                In diesem Tool wird ein Wissensgraph bereitgestellt, 
+                der die Analyse des Beziehungswissens zwischen Nachhaltigkeitsanforderungen unterstützt.
+                So kann diese neben der Visualisierung für den eigenen Überblick auch für die Kommunikation in Teams genutzt werden.
+              </div>
+              <div class="image-box">
+              </div>
+            </div>
+            <div class="buttons">
+              <a class="button margin" href="https://used.community">idee</a>
+            </div>
+          </div>
+
+          <div class="tool" data-tags="anforderung, 
+            produktplanung, 
+            produktentwicklung, 
+            entwicklungssystem, org">
+            <div class="contentbox">
+              <div class="text-box">
+                <h3>Frontloading Tool</h3>
+                Sie fragen sich, in welchen Unternehmensprozessen, welche Nachhaltigkeitsanforderungen eingebunden werden können,
+                um frühstmöglich Entscheidungen treffen zu können? 
+                Dann werden mit dem Prozessanalysetool Aktivitäten mit Anforderungen in Zusammenhanggebracht.
+              </div>
+              <div class="image-box">
+              </div>
+            </div>
+            <div class="buttons">
+              <a class="button margin" href="https://used.community">idee</a>
+            </div>
+          </div>
+
+          <div class="tool" data-tags="standards, material, kreislauf, 
+          produktplanung, strategie, geschäft, forschung, marketing, vertrieb, 
+          produktentwicklung, it, produktion, logistik, beschaffung, nutzung, werkstatt, 
+          verwertung, entwicklungssystem, kontext, bewertung">
+            <div class="contentbox">
+              <div class="text-box">
+                <h3>Bilanzierungstool</h3>
+                Nachhaltigkeitsbewertungen sind sehr umfangreich. 
+                Mit dem used Bilanzierungstool wird Dir ein Tool für qualitative 
+                und quantitative Bewertungen im Produktentstehungsprozess angeboten.
+              </div>
+              <div class="image-box">
+              </div>
+            </div>
+            <div class="buttons">
+              <a class="button margin" href="https://used.community">idee</a>
+            </div>
+          </div>
+
+        <div class="tool" data-tags="anforderung, 
+        produktplanung, strategie, forschung, marketing, vertrieb, 
+        produktentwicklung, nutzung, entwicklungssystem, kontext, bewertung">
+          <div class="contentbox">
+            <div class="text-box">
+              <h3>Funktions-Tool</h3>
+              Die Analyse und Ableitung von Funktionen ist hilfreich, 
+              um frühzeitig Stoff-, Energie- und Informationsflüsse zu erstellen und zu optimieren
+              und grundsätzlich den Bedarf einer Lösung zu hinterfragen.
+            </div>
+            <div class="image-box">
+            </div>
+          </div>
+          <div class="buttons">
+            <a class="button margin" href="https://used.community">idee</a>
+          </div>
+        </div>
+
+        <div class="tool" data-tags="ziele, 
+        produktplanung, strategie, geschäft,  marketing, vertrieb, 
+        produktentwicklung, nutzung, entwicklungssystem, kontext, bewertung">
+          <div class="contentbox">
+            <div class="text-box">
+              <h3>Nachhaltige Geschäftsfelder</h3>
+              Mit diesem Tool wird die Erstellung einer Marktleistung-Marktsegment-Matrix unterstützt,
+              um bereits frühzeitig Nachhaltigkeit bei der Geschäftsfeldentwicklung mit einzubeziehen.
+            </div>
+            <div class="image-box">
+            </div>
+          </div>
+          <div class="buttons">
+            <a class="button margin" href="https://used.community">idee</a>
+          </div>
+        </div>
+
+        <div class="tool" data-tags="standards, ziele, material, kreislauf, 
+        produktplanung, strategie, geschäft, forschung, marketing, vertrieb, 
+        produktentwicklung, it, produktion, logistik, beschaffung, nutzung, werkstatt, 
+        verwertung, entwicklungssystem, kontext, bewertung">
+          <div class="contentbox">
+            <div class="text-box">
+              <h3>used Nachhaltigkeitsausweis</h3>
+              Der used Nachhaltigkeitsausweis ermöglicht Dir analog zum Energieausweis für Häuser,
+              einen Überblick wo du beim Thema Nachhaltigkeit stehst 
+              und welche Maßnahmen Dir in deiner CSR-Rolle (Corporate Social Responsibility) helfen könnten. 
+            </div>
+            <div class="image-box">
+            </div>
+          </div>
+          <div class="buttons">
+            <a class="button margin" href="https://used.community">idee</a>
+          </div>
+        </div>
+
+        <div class="tool" data-tags="anforderung, standards,
+          produktplanung, strategie, geschäft, forschung, marketing, vertrieb, 
+          produktentwicklung, it, produktion, logistik, beschaffung, nutzung, werkstatt, 
+          verwertung, entwicklungssystem, kontext, bewertung">
+          <div class="contentbox">
+            <div class="text-box">
+              <h3>used Entwicklungssystem</h3>
+              Das  used Entwicklungssystem stellt ein umfassendes Framework für die Entwicklung nachhaltiger Produkte und Geschäftsmodelle dar. 
+              Es integriert Tools, Methoden und Prozesse von used in ein Vorgehensmodell zur praktischen Anwendung. 
+              Aufgrund der Komplexität wird dabei auf das Modellbasierte Systems Engineering (MBSE) zurückgegriffen.
+            </div>
+            <div class="image-box">
+            </div>
+          </div>
+          <div class="buttons">
+            <a class="button margin" href="https://used.community">idee</a>
+          </div>
+        </div>
+
+        <div class="tool" data-tags="anforderung, geschäft, produktentwicklung, forschung, update">
+          <div class="contentbox">
+            <div class="text-box">
+              <h3>Update Plan</h3>
+               Der Update Plan unterstützt bei der Entwicklung kreislauffähiger und langliebiger Produkte. 
+               Anforderungen aus der Produktfindung und der Geschäftsplanung können frühzeitig
+               in Modulentscheidungen und die Entwicklung der Produktarchitektur einbezogen werden.               
+            </div>
+            <div class="image-box">
+            </div>
+          </div>
+          <div class="buttons">
+            <a class="button margin" href="https://used.community">idee</a>
+          </div>
+        </div>
+
+      </div>
+   
+    </div>
+
+    <div class="footer"> 
+      <div class="link-container"> 
+        <a class="share-button" id="shareButton1" href="https://used.community" target="_blank"><img src="pictures/used-logo-rgb-buttom.png" alt="Bild 1"></a>
+        <a class="share-button" id="shareButton3" href="imp.html" target="_blank">Imprint</a>
+        <a class="share-button" id="shareButton4" href="privacy.html" target="_blank">privacy</a>
+        <a class="share-button" onclick="openEmail()">contact</a>        
+      </div>
+        
+      <div class="imp-container">
+        <p class="impress">© used.community</p> 
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
