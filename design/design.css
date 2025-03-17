@@ -181,16 +181,30 @@ width: 100%;
   }
 }
 
-/* used --------------------------- */
+/* text und titel --------------------------- */
 
-.description-head {
+.description-titel {
   text-align: center;
   color: #ffffff;
   padding-left: 20%;
   padding-right: 20%;
   margin-top: 8%;
   margin-bottom: 20px;
+  word-break: break-word;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.description-head {
+  text-align: center;
+  color: #ffffff;
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-top: 2%;
+  margin-bottom: 20px;
   word-break: break-word; 
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .description-text {
@@ -200,90 +214,15 @@ width: 100%;
   padding-right: 10%;
 }
 
-/* suche ---------------------------------------------------------------------------- */
-
-.search-bar, .filter-buttons {
-  margin-top: 50px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.search-bar input[type="text"] {
-  width: 300px;
-  padding: 10px 15px;
-  border: 2px solid #ccc;
-  border-radius: 25px;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.search-bar input[type="text"]:focus {
-  border-color: #007BFF;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.search-bar button {
-  padding: 10px 20px;
-  margin-left: 10px;
-  border: none;
-  border-radius: 25px;
-  background-color: #0056b3;
-  color: rgb(249, 249, 249);
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.search-bar button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-.search-bar button:active {
-  background-color: #004080;
-  transform: scale(1);
-}
-
-/* Filterbuttons ---------------------------------------------------------------------------- */
-
-.tool-filter-container {
-  display: flex;
-  margin-bottom: 10px;
-}
-
-.filter-buttons {
-  display: flex;
-  flex-wrap: wrap; /* Erlaubt das Umbrechen in eine neue Zeile */
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 20px; /* Abstand nach unten */
-}
-
-.filter-buttons .button {
-  background-color: hsl(305, 91%, 56%);
-  color: rgb(255, 255, 255);
-  border-radius: 25px; 
-  border-color: #dddddd00;
-  width: auto;
-  height: 25px; 
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  font-size: 12px;
-  padding: 5px 15px; 
-  font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.filter-buttons .button:hover {
-  background-color: hsl(305, 91%, 46%); 
-  transform: scale(1.05); 
-}
-
-.filter-buttons .button:active {
-  background-color: hsl(305, 91%, 36%); 
-  transform: scale(1); 
+.description-text-privacy {
+  text-align: left;
+  color: #ffffff; 
+  padding: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: #ffffff1c;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 /* Apps ---------------------------------------------------------------------------- */
@@ -291,10 +230,10 @@ width: 100%;
 .apps-container {
   flex: 1;
   overflow-y: auto;
-  min-height: 800px;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-bottom: 60px;
+  margin-top: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px;
   color: #ffffff;
 }
 
@@ -304,6 +243,7 @@ width: 100%;
   gap: 20px;
   justify-content: center;
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .tool {
@@ -327,6 +267,14 @@ width: 100%;
   font-size: 12px;
 }
 
+.contentshow {
+  display: none; /* Alle Inhalte sind standardmäßig unsichtbar */
+}
+
+.contentshow.active {
+  display: block; /* Zeigt den aktiven Inhalt an */
+}
+
 .text-box {
   flex: 1;
 }
@@ -335,7 +283,7 @@ width: 100%;
   position: absolute;
   top: 0px;
   right: 0px;
-  width: 100px;
+  width: 60px;
   height: auto;
 }
 
@@ -365,55 +313,19 @@ width: 100%;
   font-size: 14px;
 }
 
-/* data ---------------------------------------------------------------------------- */
-
-.description-text-data {
-  text-align: left;
-  color: #b2b2b2;
-  margin-top: 80px; 
-  padding-left: 10%;
-  padding-right: 10%;
+a {
+  color: white; /* Setzt die Farbe des Links auf Weiß */
+  text-decoration: none; /* Entfernt die Unterstreichung (optional) */
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px auto 100px auto; 
-  font-size: 14px;
-  color: #ffffff;
+a:visited {
+  color: white; /* Stellt sicher, dass besuchte Links auch weiß bleiben */
 }
 
-th, td {
-  border: 1px solid #888f9652;
-  padding: 10px;
-  text-align: left;
+a:hover {
+  color: lightgray; /* Optional: Farbe beim Überfahren mit der Maus */
 }
 
-th {
-  background-color: #34495e;
-  text-align: center; /* Zentrierung der ersten Spalte */
-}
-
-td {
-  background-color: #3b4f617a;
-}
-
-ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-li {
-  list-style-type: disc; /* Art der Listenpunkte (hier: runde Bullets) */
-}
-
-/* privacy ---------------------------------------------------------------------------- */
-
-.description-text-privacy {
-  text-align: left;
-  color: #ffffff; 
-  padding-left: 10%;
-  padding-right: 10%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+a:active {
+  color: white; /* Stellt sicher, dass der Link beim Klicken weiß bleibt */
 }

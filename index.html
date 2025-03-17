@@ -1,375 +1,498 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
+  
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>used community</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <script src="script/script.js"></script>
     <link href="design/design.css" rel="stylesheet">
-</head>
+  </head>
 
-<body>
-  <div class="container">
-    <div class="navbar">
-      <a href="https://www.used.community" target="_blank">
-        <img src="pictures/used-logo-white-top.png" alt="logo">
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html">used</a></li>
-          <li><a href="data.html">requirements</a></li>
-          <li><a href="https://github.com/usedcommunity/used/wiki" target="_blank">wiki</a></li>
-          <li><a href="https://mastodon.social/@usedcommunity" target="_blank">blog</a></li>
-        </ul>
-      </nav>
-    </div>
+  <body>
 
-    <div class="content">   
-      <div class="description-head">
-        <h1>Manage your sustainability requirements with scientific support</h1>
-      </div> 
-      
-      <div class="description-text">
-        Du interessierst dich für Nachhaltigkeit und möchtest einen Überblick darüber gewinnen, 
-        welche Nachhaltigkeitsanforderungen für dein Unternehmen, deine Ideen und Deine Produkte relevant sein könnten?
-        Bei used werden bedarfsgerechte Tools, Methoden und Prozesse nach wissenschaftlichen Prinzipien entwickelt, 
-        um die Übersetzung von Nachhaltigkeitsanforderungen in die Praxis bestmöglich zu unterstützen. Weitere Informationen findest Du 
-        <a href="https://github.com/usedcommunity/used/wiki"style="color: white; font-weight: bold; text-decoration: none;">hier.</a>
+    <div class="container">
+
+      <div class="navbar">
+        <a href="https://usedcommunity.de/" target="_blank">
+          <img src="pictures/used-logo-white-top.png" alt="logo">
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#" class="menu-link" data-page="used">used</a></li>
+            <li><a href="https://github.com/usedcommunity" target="_blank">code</a></li>
+            <li><a href="https://www.researchgate.net/lab/used-Niels-Demke" target="_blank">lab</a></li>
+            <li><a href="https://mastodon.social/@usedcommunity" target="_blank">blog</a></li>
+            <li><a href="#" class="menu-link" data-page="about">info</a></li>
+          </ul>
+        </nav>
       </div>
-    </div>
-    
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Suche nach Apps...">
-      <button onclick="searchApps()">Suchen</button>
-    </div>
 
-    <div class="tool-filter-container">
-      <div class="filter-buttons">
+      <div id="used" class="contentshow">
+        
+        <div class="description-titel">Manage your sustainability requirements with scientific support</div> 
 
-        <button class="button" onclick="filterApps('')">Alle</button>
-
-        <!-- Datensätze -->
-        <button class="button" onclick="filterApps('anforderung')">Anforderungen</button>
-        <button class="button" onclick="filterApps('gesetze')">Gesetze</button>
-        <button class="button" onclick="filterApps('standards')">Normen, Standards, Richtlinien</button>
-        <button class="button" onclick="filterApps('ziele')">Nachhaltigsmodelle mit Zielen</button>
-        <button class="button" onclick="filterApps('zertifikate')">Zertifikate</button>
-        <button class="button" onclick="filterApps('material')">Stoffe und Materialien</button>
-        <button class="button" onclick="filterApps('kreislauf')">Kreisläufe</button>
-      
-        <!-- frühe Phase -->
-        <button class="button" onclick="filterApps('produktplanung')">Produktplanung</button>
-        <button class="button" onclick="filterApps('strategie')">Strategie</button>
-        <button class="button" onclick="filterApps('geschäft')">Geschäft</button>
-        <button class="button" onclick="filterApps('forschung')">Forschung</button>
-        <button class="button" onclick="filterApps('marketing')">Marketing</button>
-        <button class="button" onclick="filterApps('vertrieb')">Vertrieb</button>
-    
-        <!-- Phases -->
-        <button class="button" onclick="filterApps('produktentwicklung')">Produktentwicklung</button>
-        <button class="button" onclick="filterApps('it')">IT</button>
-        <button class="button" onclick="filterApps('produktion')">Produktion</button>
-        <button class="button" onclick="filterApps('logistik')">Logistik</button>
-        <button class="button" onclick="filterApps('beschaffung')">Beschaffung</button>
-        <button class="button" onclick="filterApps('nutzung')">Nutzung</button>
-        <button class="button" onclick="filterApps('werkstatt')">Werkstatt</button>
-        <button class="button" onclick="filterApps('verwertung')">Verwertung</button>
-
-        <!-- methods -->
-        <button class="button" onclick="filterApps('entwicklungssystem')">MBSE-Entwicklungssystem</button>
-        <button class="button" onclick="filterApps('kontext')">Kontextanalyse</button>
-        <button class="button" onclick="filterApps('funktion')">Funktionsanalyse</button>
-        <button class="button" onclick="filterApps('bewertung')">Bewertungsmethoden</button>
-        <button class="button" onclick="filterApps('org')">Organisationsentwicklung</button>
-        <button class="button" onclick="filterApps('quali')">Qualifikationsplan</button>
-        <button class="button" onclick="filterApps('update')">Update</button>
-    
-      </div>
-    </div>
-  
-
-   <!--  
-    
-   "anforderung, gesetze, standards, ziele, zertifikate, material, kreislauf, 
-    produktplanung, strategie, geschäft, forschung, marketing, vertrieb, 
-    produktentwicklung, it, produktion, logistik, beschaffung, nutzung, werkstatt, 
-    verwertung, entwicklungssystem, kontext, funktion, bewertung, org, quali, update"
-    
-    -->
-
-
-    <div class="apps-container" id="appContainer">
-        <div class="apps">
+        <div class="description-text">
+          Du interessierst dich für Nachhaltigkeit und möchtest einen Überblick darüber gewinnen, 
+          welche Nachhaltigkeitsanforderungen für dein Unternehmen, deine Ideen und Deine Produkte relevant sein könnten?
+          Bei used werden bedarfsgerechte Tools, Methoden und Prozesse nach wissenschaftlichen Prinzipien entwickelt, 
+          um die Übersetzung von Nachhaltigkeitsanforderungen in die Praxis bestmöglich zu unterstützen.
+        </div>
           
-          <div class="tool" data-tags= "anforderung, gesetze, produktplanung, strategie, geschäft, marketing, vertrieb, produktentwicklung, 
-            it, produktion, logistik, beschaffung, nutzung, werkstatt, verwertung, entwicklungssystem, kontext, funktion, bewertung, org, quali">
-            <div class="contentbox">
-              <div class="text-box">
+        <div class="apps-container" id="appContainer">
+          <div class="apps">
+            
+            <div class="tool" data-tags="anforderung, ziele, produktplanung, strategie, geschäft, forschung, produktentwicklung, produktion, logistik, beschaffung, nutzung, werkstatt, verwertung, entwicklungssystem, kontext, bewertung, org, quali">
+              <div class="contentbox">
+                <div class="text-box">
+                  <h3>used Zielsystem</h3>
+                  Wissenschaftliche Nachhaltigkeitsmodelle stellen 
+                  die Grundlage für die Bewertung der Wirksamkeit von Maßnahmen dar.
+                  Das used Zielsystem leitet aus bekannten Modellen Zielgrößen für die Produktentstehung ab 
+                  und bereitet diese übersichtlich auf.
+                </div>
+                <div class="image-box">
+                  <img src="pictures/tools/target.png" class="top-right-image" >
+                </div>
+              </div>
+              <div class="buttons">
+                <a class="button-final margin" href="https://usedcommunity.github.io/sts/" target="_blank">start</a>
+              </div>
+            </div>
+
+            <div class="tool" data-tags= "anforderung, gesetze, produktplanung, strategie, geschäft, marketing, vertrieb, produktentwicklung, it, produktion, logistik, beschaffung, nutzung, werkstatt, verwertung, entwicklungssystem, kontext, funktion, bewertung, org, quali">
+              <div class="contentbox">
+                <div class="text-box">
                   <h3>Gesetzefinder</h3>
                   Schau dir an, welche Gesetze zum Thema Nachhaltigkeit für dein Unternehmen relevant sind 
                   oder es in Zukunft werden könnten, und verschaffe dir einen Überblick über die resultierenden Anforderungen.
+                </div>
+                <div class="image-box">
+                  <img src="pictures/tools/laws.png" class="top-right-image" >
+                </div>
               </div>
+              <div class="buttons">
+                <a class="button-final margin" href="https://usedcommunity.github.io/LeSuReFo" target="_blank">start</a>
+              </div>
+            </div>
 
-              <div class="image-box">
-                <img src="pictures/tools/laws.png" class="top-right-image" >
+            <div class="tool" data-tags="anforderung, gesetze, standards, zertifikate, produktplanung, strategie, marketing, vertrieb, produktentwicklung, it, produktion, logistik, beschaffung, nutzung, werkstatt, verwertung, bewertung, org, quali">
+              <div class="contentbox">
+                <div class="text-box">
+                  <h3>Zertifikatefinder</h3>
+                  Zeige der Welt, wie nachhaltig du bist, und erhalte nebenbei die Chance, 
+                  mit deiner Nachhaltigkeit zu werben. Mit unserem Zertifikatsfinder findest du die Zertifikate, 
+                  die für dein Unternehmen infrage kommen.
+                </div>
+                <div class="image-box">
+                </div>
+              </div>
+              <div class="buttons">
+                <a class="button margin" href="https://usedcommunity.de/">in entwicklung</a>
               </div>
             </div>
-            <div class="buttons">
-              <a class="button-final margin" href="https://usedcommunity.github.io/LeSuReFo">start</a>
-            </div>
-          </div>
-          
-          <div class="tool" data-tags="anforderung, ziele, produktplanung, strategie, geschäft, forschung, produktentwicklung, produktion, logistik, beschaffung, nutzung, werkstatt, 
-            verwertung, entwicklungssystem, kontext, bewertung, org, quali">
-            <div class="contentbox">
-              <div class="text-box">
-                <h3>used Zielsystem</h3>
-                Wissenschaftliche Nachhaltigkeitsmodelle stellen 
-                die Grundlage für die Bewertung der Wirksamkeit von Maßnahmen dar.
-                Das used Zielsystem leitet aus bekannten Modellen Zielgrößen für die Produktentstehung ab 
-                und bereitet diese übersichtlich auf.
-              </div>
-              <div class="image-box">
-              </div>
-            </div>
-            <div class="buttons">
-              <a class="button margin" href="https://used.community">in entwicklung</a>
-            </div>
-          </div>
 
-          <div class="tool" data-tags="anforderung, gesetze, standards, zertifikate, produktplanung, strategie, marketing, vertrieb, produktentwicklung, it, 
-            produktion, logistik, beschaffung, nutzung, werkstatt, verwertung, bewertung, org, quali">
-            <div class="contentbox">
-              <div class="text-box">
-                <h3>Zertifikatefinder</h3>
-                Zeige der Welt, wie nachhaltig du bist, und erhalte nebenbei die Chance, 
-                mit deiner Nachhaltigkeit zu werben. Mit unserem Zertifikatsfinder findest du die Zertifikate, 
-                die für dein Unternehmen infrage kommen.
+            <div class="tool" data-tags="anforderung, standards, material, entwicklungssystem">
+              <div class="contentbox">
+                <div class="text-box">
+                  <h3>NorStaRi</h3>
+                  Normen, Standards und Richtlinien erfassen den Stand der Technik 
+                  und stellen Anforderungen für Unternehmen, Produkte und Dienstleistungen dar.
+                  Hier wird eine Übersicht über relevante Organisationen und deren Nachhaltigkeitsanforderungen gegeben.
+                </div>
+                <div class="image-box">
+                </div>
               </div>
-              <div class="image-box">
+              <div class="buttons">
+                  <a class="button margin" href="https://usedcommunity.de/">in planung</a>
               </div>
             </div>
-            <div class="buttons">
-              <a class="button margin" href="https://used.community">in entwicklung</a>
-            </div>
-          </div>
 
-
-          <div class="tool" data-tags="anforderung, produktplanung, strategie, geschäft, forschung, 
+            <div class="tool" data-tags="standards, ziele, material, kreislauf, 
+            produktplanung, strategie, geschäft, forschung, marketing, vertrieb, 
             produktentwicklung, it, produktion, logistik, beschaffung, nutzung, werkstatt, 
-            verwertung, entwicklungssystem, kontext, funktion">
-            <div class="contentbox">
-              <div class="text-box">
-                <h3>Kontextanalyse</h3>
-                Die Kontextanalyse ist einer der ersten Schritte in einem Entwicklungsprojekt.
-                So kann das Projektfeld und die Identifikation und Spezifikation von Anforderungen 
-                sowie die früherkennung von Risiken frühzeitig unterstützt werden.
+            verwertung, entwicklungssystem, kontext, bewertung">
+              <div class="contentbox">
+                <div class="text-box">
+                  <h3>used Nachhaltigkeitsassistenz</h3>
+                  Die used Nachhaltigkeitsassistenz bietet dir, ähnlich wie der Energieausweis für Häuser, 
+                  eine klare Übersicht darüber, welche Nachhaltigkeitsanforderungen auf deine Situation bezogen bestehen. 
+                </div>
+                <div class="image-box">
+                </div>
               </div>
-              <div class="image-box">
-              </div>
-            </div>
-            <div class="buttons">
-              <a class="button margin" href="https://used.community">in planung</a>
-            </div>
-          </div>
-
-          <div class="tool" data-tags="anforderung, standards, material, entwicklungssystem">
-            <div class="contentbox">
-              <div class="text-box">
-                <h3>Übersichtsliste zu Normen, Standards und Richtlinien</h3>
-                Normen, Standards und Richtlinien erfassen den Stand der Technik 
-                und stellen Anforderungen für Unternehmen, Produkte und Dienstleistungen dar.
-                Hier wird eine Übersicht über relevante Organisationen und deren Nachhaltigkeitsanforderungen gegeben.
-              </div>
-              <div class="image-box">
-              </div>
-            </div>
-            <div class="buttons">
-                <a class="button margin" href="https://used.community">in planung</a>
-            </div>
-          </div>
-
-          <div class="tool" data-tags="standards, material, kreislauf, 
-            produktplanung, strategie,
-            produktentwicklung, produktion, logistik, beschaffung, nutzung, werkstatt, 
-            verwertung, bewertung, update">
-            <div class="contentbox">
-              <div class="text-box">
-                <h3>Kreislaufbewertungstool</h3>
-                Sie wollen eine Kreislaufbewertung durchführen, 
-                um konkrete Produktanforderungen oder strategische Unternehmensziele abzuleiten?
-                Im Kreislaufbewertungstool werden aktuelle Bewertungsstandards zusammengefasst
-                und für die praktische Anwendung bereitgestellt.
-              </div>
-              <div class="image-box">
-              </div>
-            </div>
-            <div class="buttons">
+              <div class="buttons">
                 <a class="button margin" href="https://used.community">idee</a>
-            </div>
-          </div>
-
-          <div class="tool" data-tags= "anforderung, ziele, it">
-            <div class="contentbox">
-              <div class="text-box">
-                <h3>Anforderungsgraph</h3>
-                In diesem Tool wird ein Wissensgraph bereitgestellt, 
-                der die Analyse des Beziehungswissens zwischen Nachhaltigkeitsanforderungen unterstützt.
-                So kann diese neben der Visualisierung für den eigenen Überblick auch für die Kommunikation in Teams genutzt werden.
-              </div>
-              <div class="image-box">
               </div>
             </div>
-            <div class="buttons">
-              <a class="button margin" href="https://used.community">idee</a>
-            </div>
-          </div>
 
-          <div class="tool" data-tags="anforderung, 
-            produktplanung, 
-            produktentwicklung, 
-            entwicklungssystem, org">
-            <div class="contentbox">
-              <div class="text-box">
-                <h3>Frontloading Tool</h3>
-                Sie fragen sich, in welchen Unternehmensprozessen, welche Nachhaltigkeitsanforderungen eingebunden werden können,
-                um frühstmöglich Entscheidungen treffen zu können? 
-                Dann werden mit dem Prozessanalysetool Aktivitäten mit Anforderungen in Zusammenhanggebracht.
+            <div class="tool" data-tags="ziele, produktplanung, strategie, geschäft,  marketing, vertrieb, produktentwicklung, nutzung, entwicklungssystem, kontext, bewertung">
+              <div class="contentbox">
+                <div class="text-box">
+                  <h3>Nachhaltige Geschäftsfelder</h3>
+                  Mit diesem Tool wird die Erstellung einer Marktleistung-Marktsegment-Matrix unterstützt,
+                  um bereits frühzeitig Nachhaltigkeit bei der Geschäftsfeldentwicklung mit einzubeziehen.
+                </div>
+                <div class="image-box">
+                </div>
               </div>
-              <div class="image-box">
+              <div class="buttons">
+                <a class="button margin" href="https://usedcommunity.de/">idee</a>
               </div>
             </div>
-            <div class="buttons">
-              <a class="button margin" href="https://used.community">idee</a>
-            </div>
-          </div>
-
-          <div class="tool" data-tags="standards, material, kreislauf, 
-          produktplanung, strategie, geschäft, forschung, marketing, vertrieb, 
-          produktentwicklung, it, produktion, logistik, beschaffung, nutzung, werkstatt, 
-          verwertung, entwicklungssystem, kontext, bewertung">
-            <div class="contentbox">
-              <div class="text-box">
-                <h3>Bilanzierungstool</h3>
-                Nachhaltigkeitsbewertungen sind sehr umfangreich. 
-                Mit dem used Bilanzierungstool wird Dir ein Tool für qualitative 
-                und quantitative Bewertungen im Produktentstehungsprozess angeboten.
-              </div>
-              <div class="image-box">
-              </div>
-            </div>
-            <div class="buttons">
-              <a class="button margin" href="https://used.community">idee</a>
-            </div>
-          </div>
-
-        <div class="tool" data-tags="anforderung, 
-        produktplanung, strategie, forschung, marketing, vertrieb, 
-        produktentwicklung, nutzung, entwicklungssystem, kontext, bewertung">
-          <div class="contentbox">
-            <div class="text-box">
-              <h3>Funktions-Tool</h3>
-              Die Analyse und Ableitung von Funktionen ist hilfreich, 
-              um frühzeitig Stoff-, Energie- und Informationsflüsse zu erstellen und zu optimieren
-              und grundsätzlich den Bedarf einer Lösung zu hinterfragen.
-            </div>
-            <div class="image-box">
-            </div>
-          </div>
-          <div class="buttons">
-            <a class="button margin" href="https://used.community">idee</a>
-          </div>
-        </div>
-
-        <div class="tool" data-tags="ziele, 
-        produktplanung, strategie, geschäft,  marketing, vertrieb, 
-        produktentwicklung, nutzung, entwicklungssystem, kontext, bewertung">
-          <div class="contentbox">
-            <div class="text-box">
-              <h3>Nachhaltige Geschäftsfelder</h3>
-              Mit diesem Tool wird die Erstellung einer Marktleistung-Marktsegment-Matrix unterstützt,
-              um bereits frühzeitig Nachhaltigkeit bei der Geschäftsfeldentwicklung mit einzubeziehen.
-            </div>
-            <div class="image-box">
-            </div>
-          </div>
-          <div class="buttons">
-            <a class="button margin" href="https://used.community">idee</a>
-          </div>
-        </div>
-
-        <div class="tool" data-tags="standards, ziele, material, kreislauf, 
-        produktplanung, strategie, geschäft, forschung, marketing, vertrieb, 
-        produktentwicklung, it, produktion, logistik, beschaffung, nutzung, werkstatt, 
-        verwertung, entwicklungssystem, kontext, bewertung">
-          <div class="contentbox">
-            <div class="text-box">
-              <h3>used Nachhaltigkeitsausweis</h3>
-              Der used Nachhaltigkeitsausweis ermöglicht Dir analog zum Energieausweis für Häuser,
-              einen Überblick wo du beim Thema Nachhaltigkeit stehst 
-              und welche Maßnahmen Dir in deiner CSR-Rolle (Corporate Social Responsibility) helfen könnten. 
-            </div>
-            <div class="image-box">
-            </div>
-          </div>
-          <div class="buttons">
-            <a class="button margin" href="https://used.community">idee</a>
-          </div>
-        </div>
-
-        <div class="tool" data-tags="anforderung, standards,
-          produktplanung, strategie, geschäft, forschung, marketing, vertrieb, 
-          produktentwicklung, it, produktion, logistik, beschaffung, nutzung, werkstatt, 
-          verwertung, entwicklungssystem, kontext, bewertung">
-          <div class="contentbox">
-            <div class="text-box">
-              <h3>used Entwicklungssystem</h3>
-              Das  used Entwicklungssystem stellt ein umfassendes Framework für die Entwicklung nachhaltiger Produkte und Geschäftsmodelle dar. 
-              Es integriert Tools, Methoden und Prozesse von used in ein Vorgehensmodell zur praktischen Anwendung. 
-              Aufgrund der Komplexität wird dabei auf das Modellbasierte Systems Engineering (MBSE) zurückgegriffen.
-            </div>
-            <div class="image-box">
-            </div>
-          </div>
-          <div class="buttons">
-            <a class="button margin" href="https://used.community">idee</a>
-          </div>
-        </div>
-
-        <div class="tool" data-tags="anforderung, geschäft, produktentwicklung, forschung, update">
-          <div class="contentbox">
-            <div class="text-box">
-              <h3>Update Plan</h3>
-               Der Update Plan unterstützt bei der Entwicklung kreislauffähiger und langliebiger Produkte. 
-               Anforderungen aus der Produktfindung und der Geschäftsplanung können frühzeitig
-               in Modulentscheidungen und die Entwicklung der Produktarchitektur einbezogen werden.               
-            </div>
-            <div class="image-box">
-            </div>
-          </div>
-          <div class="buttons">
-            <a class="button margin" href="https://used.community">idee</a>
           </div>
         </div>
 
       </div>
-   
-    </div>
-
-    <div class="footer"> 
-      <div class="link-container"> 
-        <a class="share-button" id="shareButton1" href="https://used.community" target="_blank"><img src="pictures/used-logo-rgb-buttom.png" alt="Bild 1"></a>
-        <a class="share-button" id="shareButton3" href="imp.html" target="_blank">Imprint</a>
-        <a class="share-button" id="shareButton4" href="privacy.html" target="_blank">privacy</a>
-        <a class="share-button" onclick="openEmail()">contact</a>        
-      </div>
+  
+      <div id="about" class="contentshow">
         
-      <div class="imp-container">
-        <p class="impress">© used.community</p> 
-      </div>
-    </div>
-  </div>
+        <div class="description-titel">Informationen</div>
+      
+        
+        <div class="description-head"><h2>about us</h2></div>
+        <div class="description-text-privacy">
+          <p>
+            used – das steht für United Sustainable Engineering and Design – ist eine gemeinnützige Open-Source-Community mit einer klaren Mission: Sie hilft Menschen und Organisationen, 
+            Nachhaltigkeit greifbar zu machen. Dabei schlägt sie eine Brücke zwischen dem oft abstrakten Begriff der Nachhaltigkeit, 
+            den damit verbundenen Anforderungen und den individuellen Herausforderungen der Anwender.
+            Die Idee zu used entstand aus unserer Forschung zur nachhaltigen Produktentwicklung an der Helmut-Schmidt-Universität in Hamburg.
+            Während wir uns intensiv mit der Wirksamkeit von Prozessen, Methoden und Tools beschäftigten, wurde uns ein zentrales Problem bewusst: 
+            Es gibt zahlreiche vielversprechende wissenschaftliche Ansätze, doch nur wenige finden ihren Weg in die Praxis.
+            Dabei spielen Anforderungen eine entscheidende Rolle – sie sind der Schlüssel zur Entwicklung nachhaltiger Produkte und Geschäftsmodelle. 
+            Genau hier setzt used an: Welche Nachhaltigkeitsanforderungen können wirklich etwas bewirken? Und wie lassen sie sich so aufbereiten, 
+            dass sie für Menschen und Organisationen einen echten Mehrwert bieten?
+            Mit diesen Fragen im Fokus arbeitet used daran, Nachhaltigkeit nicht nur verständlich, 
+            sondern auch anwendbar zu machen – für eine Welt, in der nachhaltiges Denken und Handeln selbstverständlich wird.
+          </p>
+        </div>
 
-</body>
+        <div class="description-head"><h2>lets work together</h2></div>
+        <div class="description-text-privacy">
+          <p>• Auf unserer Landingpage (<a href="https://www.usedcommunity.de" target="_blank"><strong>https://www.usedcommunity.de</strong></a>) sind alle Tools verlinkt</p>
+          <p>• Das used Anforderungsframework wird im Overview auf github vorgestellt und fortlaufend weiterentwickelt (<a href="https://github.com/usedcommunity#used-anforderungskanon" target="_blank"><strong>https://github.com/usedcommunity#used-anforderungskanon</strong></a>)</p>
+          <p>• Als zentrale Entwicklungsumgebung nutzen wir github (<a href="https://github.com/usedcommunity" target="_blank"><strong>https://github.com/usedcommunity</strong></a>). Spezifische Informationen zu Tools findet man in den jeweiligen Repositories (Overvie, readme files, Tool-Wiki)</p>
+          <p>• Wissenschaftliche Publikationen werden im Lab auf researchgate gelistet (<a href="https://www.researchgate.net/lab/used-Niels-Demke" target="_blank"><strong>https://www.researchgate.net/lab/used</strong></a>)</p>
+          <p>• Aktuelle Meldungen zu used findest Du auf Mastodon (<a href="https://mastodon.social/@usedcommunity" target="_blank"><strong>https://mastodon.social/@usedcommunity</strong></a>)</p>
+        </div>
+
+        <div class="description-head"><h2>join us</h2></div>
+        <div class="description-text-privacy">
+          <p>✔ Schreibe uns einfach unter <a href="mailto:contact@usedcommunity.de"><strong>contact@usedcommunity.de</strong></a> mit ein paar Infos über dich und dein Interesse.</p>
+          <p>✔ Wir nehmen Kontakt mit dir auf und stellen dir die Community und mögliche Projekte in einem ersten Austausch vor.</p>
+          <p>✔ Wenn es passt, legen wir gemeinsam los und Du erhältst alle wichtigen Infos und Einladungen zu unseren nächsten Treffen!</p>
+        </div>
+
+        <div class="description-head"><h2>Impressum</h2></div>
+        <div class="description-text-privacy">
+          <h3>Adresse</h3>
+        
+          <p>
+            Niels Demke <br>
+            Helmut-Schmidt-Universität <br>
+            Holstenhofweg 85 <br>
+            22043 Hamburg
+          </p>
+      
+          <h3>Kontakt</h3>
+          <p>
+            E-Mail: contact@usedcommunity.de
+          </p>
+          
+          <h3>Vertreten durch</h3>
+          <p>
+            Niels Demke, Wilke Willems
+          </p>
+      
+          <h3>Verantwortlich gemäß § 55 Abs. 2 RStV</h3>
+          <p>
+            Niels Demke <br>
+            Helmut-Schmidt-Universität <br>
+            Holstenhofweg 85 <br>
+            22043 Hamburg
+          </p>
+      
+          <h3>Forschungstransfer und Open-Source-Initiativen</h3>
+          <p>
+            Dieses Projekt fördert den Transfer von Forschungsergebnissen in die Praxis 
+            und ist im Rahmen der Nachhaltigkeitsforschung an der Professur für Maschinenelemente 
+            und Rechnergestützte Produktentwicklung (MRP) der Fakultät für Maschinenbau und Bauingenieurwesen der Helmut-Schmidt-Universität in Hamburg entstanden. 
+            Insbesondere wird daher auf die MIT-Lizenz verwiesen.
+          </p>
+      
+          <h3>Haftungsausschluss</h3>
+      
+          <p>
+            Haftung für Inhalte: Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. 
+            Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Haftung. 
+            Wir sind nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu suchen, 
+            die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. 
+            Eine Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Sobald uns Rechtsverletzungen bekannt werden, werden wir solche Inhalte umgehend entfernen.
+          </p>
+
+          <p>
+            Haftung für externe Links: Unsere Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. 
+            Deshalb können wir für diese fremden Inhalte keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. 
+            Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. 
+            Eine permanente Kontrolle der Inhalte der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte auf eine Rechtsverletzung nicht zumutbar. 
+            Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+          </p>
+        </div>
+
+        <div class="description-head"><h2>Datenschutzerklärung</h2></div>
+
+        <div class="description-text-privacy">
+                    
+          <h3>1. Datenschutz auf einen Blick</h3>
+
+            <h4><u>Allgemeine Hinweise</u></h4> 
+              Die folgenden Hinweise geben einen einfachen &Uuml;berblick dar&uuml;ber, was mit Ihren personenbezogenen Daten passiert, 
+              wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen. 
+              Ausf&uuml;hrliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgef&uuml;hrten Datenschutzerkl&auml;rung.
+
+            <h4><u>Datenerfassung auf dieser Website</u></h4> 
+
+            <h4>Wer ist verantwortlich f&uuml;r die Datenerfassung auf dieser Website?</h4>
+              Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. 
+              Dessen Kontaktdaten k&ouml;nnen Sie dem Abschnitt &bdquo;Hinweis zur Verantwortlichen Stelle&ldquo; in dieser Datenschutzerkl&auml;rung entnehmen.
+
+            <h4>Wie erfassen wir Ihre Daten?</h4> 
+              Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.&nbsp;B. um Daten handeln, 
+              die Sie in ein Kontaktformular eingeben. Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. 
+              Das sind vor allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). 
+              Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.
+            
+            <h4>Wof&uuml;r nutzen wir Ihre Daten?</h4> 
+              Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gew&auml;hrleisten. 
+              Andere Daten k&ouml;nnen zur Analyse Ihres Nutzerverhaltens verwendet werden.
+                
+            <h4>Welche Rechte haben Sie bez&uuml;glich Ihrer Daten?</h4> 
+              Sie haben jederzeit das Recht, unentgeltlich Auskunft &uuml;ber Herkunft, 
+              Empf&auml;nger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. 
+              Sie haben au&szlig;erdem ein Recht, die Berichtigung oder L&ouml;schung dieser Daten zu verlangen. 
+              Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, k&ouml;nnen Sie diese Einwilligung jederzeit f&uuml;r die Zukunft widerrufen. 
+              Au&szlig;erdem haben Sie das Recht, unter bestimmten Umst&auml;nden die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. 
+              Des Weiteren steht Ihnen ein Beschwerderecht bei der zust&auml;ndigen Aufsichtsbeh&ouml;rde zu.
+              Hierzu sowie zu weiteren Fragen zum Thema Datenschutz k&ouml;nnen Sie sich jederzeit an uns wenden.
+            <br><br/>
+
+          <h3>2. Hosting</h3>
+
+            Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
+
+            <h4>Externes Hosting</h4> 
+              Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters / der Hoster gespeichert. 
+              Hierbei kann es sich v.&nbsp;a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, 
+              die &uuml;ber eine Website generiert werden, handeln.
+              Das externe Hosting erfolgt zum Zwecke der Vertragserf&uuml;llung gegen&uuml;ber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) 
+              und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). 
+              Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TTDSG, 
+              soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TTDSG umfasst. 
+              Die Einwilligung ist jederzeit widerrufbar. 
+          
+              Unser(e) Hoster wird bzw. werden Ihre Daten nur insoweit verarbeiten, wie dies zur Erf&uuml;llung seiner Leistungspflichten erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen.
+        
+            <h4><u>Wir setzen folgende(n) Hoster ein:</u></h4>
+              <p>https://pages.github.com/<br/>
+              GitHub <br/>
+              B.V Prins Bernhardplein 200, <br/>
+              Amsterdam 1097JB, <br/>
+              Niederlande</p>
+
+            <h4>Auftragsverarbeitung</h4> 
+              Wir haben einen Vertrag &uuml;ber Auftragsverarbeitung (AVV) zur Nutzung des oben genannten Dienstes geschlossen. 
+              Hierbei handelt es sich um einen datenschutzrechtlich vorgeschriebenen Vertrag, der gew&auml;hrleistet, 
+              dass dieser die personenbezogenen Daten unserer Websitebesucher nur nach unseren Weisungen und unter Einhaltung der DSGVO verarbeitet.
+            <br><br/>
+
+          <h3>3. Allgemeine Hinweise und Pflicht&shy;informationen</h3>
+
+            <h4>Datenschutz</h4> 
+              Die Betreiber dieser Seiten nehmen den Schutz Ihrer pers&ouml;nlichen Daten sehr ernst. 
+              Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerkl&auml;rung.
+              Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. 
+              Personenbezogene Daten sind Daten, mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen. 
+              Die vorliegende Datenschutzerkl&auml;rung erl&auml;utert, welche Daten wir erheben und wof&uuml;r wir sie nutzen. Sie erl&auml;utert auch, wie 
+              und zu welchem Zweck das geschieht.
+              
+              Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken aufweisen kann. 
+              Ein l&uuml;ckenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht m&ouml;glich.
+        
+            <h4>Hinweis zur verantwortlichen Stelle</h4> 
+                
+              Die verantwortliche Stelle f&uuml;r die Datenverarbeitung auf dieser Website ist:<br/>
+              <p></p>
+              
+              used community<br/>
+              Vertreten durch Niels Demke<br/>
+              Helmut-Schmidt-Universit&auml;t<br/>
+              Holstenhofweg 85<br/>
+              22043 Hamburg<br/>
+              E-Mail: contact@used.community<br/>
+              <p></p>
+              Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, 
+              die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen, E-Mail-Adressen o. &Auml;.) entscheidet.
+        
+            <h4>Speicherdauer</h4> 
+              Soweit innerhalb dieser Datenschutzerkl&auml;rung keine speziellere Speicherdauer genannt wurde, 
+              verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck f&uuml;r die Datenverarbeitung entf&auml;llt. 
+              Wenn Sie ein berechtigtes L&ouml;schersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, 
+              werden Ihre Daten gel&ouml;scht, 
+              sofern wir keine anderen rechtlich zul&auml;ssigen Gr&uuml;nde f&uuml;r die Speicherung Ihrer personenbezogenen Daten haben 
+              (z.&nbsp;B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die L&ouml;schung nach Fortfall dieser Gr&uuml;nde.
+        
+            <h4>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website</h4> 
+              Sofern Sie in die Datenverarbeitung eingewilligt haben, 
+              verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, 
+              sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. 
+              Im Falle einer ausdr&uuml;cklichen Einwilligung in die &Uuml;bertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung au&szlig;erdem auf Grundlage von Art. 
+              49 Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in Ihr Endger&auml;t (z.&nbsp;B. via Device-Fingerprinting) eingewilligt haben, 
+              erfolgt die Datenverarbeitung zus&auml;tzlich auf Grundlage von &sect; 25 Abs. 1 TTDSG. Die Einwilligung ist jederzeit widerrufbar. 
+              Sind Ihre Daten zur Vertragserf&uuml;llung oder zur Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen erforderlich, 
+              verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, 
+              sofern diese zur Erf&uuml;llung einer rechtlichen Verpflichtung erforderlich sind auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. 
+              Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. 
+              &Uuml;ber die jeweils im Einzelfall einschl&auml;gigen Rechtsgrundlagen wird in den folgenden Abs&auml;tzen dieser Datenschutzerkl&auml;rung informiert.
+
+            <h4>Empfänger von personenbezogenen Daten</h4> 
+              Im Rahmen unserer Gesch&auml;ftst&auml;tigkeit arbeiten wir mit verschiedenen externen Stellen zusammen. 
+              Dabei ist teilweise auch eine &Uuml;bermittlung von personenbezogenen Daten an diese externen Stellen erforderlich. 
+              Wir geben personenbezogene Daten nur dann an externe Stellen weiter, wenn dies im Rahmen einer Vertragserf&uuml;llung erforderlich ist,
+              wenn wir gesetzlich hierzu verpflichtet sind (z.&nbsp;B. Weitergabe von Daten an Steuerbeh&ouml;rden), 
+              wenn wir ein berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine sonstige Rechtsgrundlage die Datenweitergabe erlaubt. 
+              Beim Einsatz von Auftragsverarbeitern geben wir personenbezogene Daten unserer Kunden nur auf Grundlage eines g&uuml;ltigen Vertrags &uuml;ber Auftragsverarbeitung weiter. 
+              Im Falle einer gemeinsamen Verarbeitung wird ein Vertrag &uuml;ber gemeinsame Verarbeitung geschlossen.
+
+            <h4>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h4> 
+              Viele Datenverarbeitungsvorg&auml;nge sind nur mit Ihrer ausdr&uuml;cklichen Einwilligung m&ouml;glich. Sie k&ouml;nnen eine bereits erteilte Einwilligung jederzeit widerrufen. 
+              Die Rechtm&auml;&szlig;igkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unber&uuml;hrt.
+
+            <h4>Widerspruchsrecht gegen die Datenerhebung in besonderen F&auml;llen sowie gegen Direktwerbung (Art. 21 DSGVO)</h4> 
+              WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GR&Uuml;NDEN, 
+              DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; 
+              DIES GILT AUCH F&Uuml;R EIN AUF DIESE BESTIMMUNGEN GEST&Uuml;TZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, 
+              ENTNEHMEN SIE DIESER DATENSCHUTZERKL&Auml;RUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, 
+              ES SEI DENN, WIR K&Ouml;NNEN ZWINGENDE SCHUTZW&Uuml;RDIGE GR&Uuml;NDE F&Uuml;R DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, 
+              RECHTE UND FREIHEITEN &Uuml;BERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUS&Uuml;BUNG ODER VERTEIDIGUNG VON RECHTSANSPR&Uuml;CHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).
+              WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, 
+              JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH F&Uuml;R DAS PROFILING, 
+              SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).
+            </p>
+        
+            <h4>Beschwerde&shy;recht bei der zust&auml;ndigen Aufsichts&shy;beh&ouml;rde</h4> 
+              Im Falle von Verst&ouml;&szlig;en gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbeh&ouml;rde, 
+              insbesondere in dem Mitgliedstaat ihres gew&ouml;hnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutma&szlig;lichen Versto&szlig;es zu. 
+              Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.
+        
+            <h4>Recht auf Daten&shy;&uuml;bertrag&shy;barkeit</h4> 
+              Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erf&uuml;llung eines Vertrags automatisiert verarbeiten, 
+              an sich oder an einen Dritten in einem g&auml;ngigen, maschinenlesbaren Format aush&auml;ndigen zu lassen. 
+              Sofern Sie die direkte &Uuml;bertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.
+
+            <h4>Auskunft, Berichtigung und L&ouml;schung</h4> 
+              Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft &uuml;ber Ihre gespeicherten personenbezogenen Daten, 
+              deren Herkunft und Empf&auml;nger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder L&ouml;schung dieser Daten. 
+              Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten k&ouml;nnen Sie sich jederzeit an uns wenden.
+
+            <h4>Recht auf Einschr&auml;nkung der Verarbeitung</h4> 
+              Sie haben das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. 
+              Hierzu k&ouml;nnen Sie sich jederzeit an uns wenden. Das Recht auf Einschr&auml;nkung der Verarbeitung besteht in folgenden F&auml;llen: <br><br/>
+              
+              <li>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, 
+              ben&ouml;tigen wir in der Regel Zeit, um dies zu &uuml;berpr&uuml;fen. F&uuml;r die Dauer der Pr&uuml;fung haben Sie das Recht, 
+              die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li><br><br/>
+              
+              <li>Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtm&auml;&szlig;ig geschah/geschieht, 
+              k&ouml;nnen Sie statt der L&ouml;schung die Einschr&auml;nkung der Datenverarbeitung verlangen.</li><br><br/>
+                  
+              <li>Wenn wir Ihre personenbezogenen Daten nicht mehr ben&ouml;tigen, Sie sie jedoch zur Aus&uuml;bung, 
+                  Verteidigung oder Geltendmachung von Rechtsanspr&uuml;chen ben&ouml;tigen, haben Sie das Recht, 
+                  statt der L&ouml;schung die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li><br><br/> 
+                  
+              <li>Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abw&auml;gung zwischen Ihren und unseren Interessen vorgenommen werden. 
+              Solange noch nicht feststeht, wessen Interessen &uuml;berwiegen, haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li><br><br/>
+          
+              Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschr&auml;nkt haben, 
+              d&uuml;rfen diese Daten &ndash; von ihrer Speicherung abgesehen &ndash; nur mit Ihrer Einwilligung oder zur Geltendmachung, 
+              Aus&uuml;bung oder Verteidigung von Rechtsanspr&uuml;chen oder zum Schutz der Rechte einer anderen nat&uuml;rlichen oder juristischen Person 
+              oder aus Gr&uuml;nden eines wichtigen &ouml;ffentlichen Interesses der Europ&auml;ischen Union oder eines Mitgliedstaats verarbeitet werden.
+            <br><br/>
+
+          <h3>4. Datenerfassung auf dieser Website</h3>
+            <h4>Cookies</h4> 
+              Unsere Internetseiten verwenden so genannte &bdquo;Cookies&ldquo;. 
+              Cookies sind kleine Datenpakete und richten auf Ihrem Endger&auml;t keinen Schaden an. 
+              Sie werden entweder vor&uuml;bergehend f&uuml;r die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endger&auml;t gespeichert. 
+              Session-Cookies werden nach Ende Ihres Besuchs automatisch gel&ouml;scht. 
+              Permanente Cookies bleiben auf Ihrem Endger&auml;t gespeichert, bis Sie diese selbst l&ouml;schen oder eine automatische L&ouml;schung durch Ihren Webbrowser erfolgt. 
+              Cookies k&ouml;nnen von uns (First-Party-Cookies) oder von Drittunternehmen stammen (sog. Third-Party-Cookies). 
+              Third-Party-Cookies erm&ouml;glichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von Webseiten (z.&nbsp;B. Cookies zur Abwicklung von Zahlungsdienstleistungen).
+              Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, 
+              da bestimmte Webseitenfunktionen ohne diese nicht funktionieren w&uuml;rden (z.&nbsp;B. die Warenkorbfunktion oder die Anzeige von Videos). 
+              Andere Cookies k&ouml;nnen zur Auswertung des Nutzerverhaltens oder zu Werbezwecken verwendet werden.
+              Cookies, die zur Durchf&uuml;hrung des elektronischen Kommunikationsvorgangs, zur Bereitstellung bestimmter, 
+              von Ihnen erw&uuml;nschter Funktionen (z.&nbsp;B. f&uuml;r die Warenkorbfunktion) oder zur Optimierung der Website
+                (z.&nbsp;B. Cookies zur Messung des Webpublikums) erforderlich sind (notwendige Cookies), 
+              werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben wird. 
+              Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von notwendigen Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. 
+              Sofern eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, 
+              erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TTDSG); 
+              die Einwilligung ist jederzeit widerrufbar.
+              Sie k&ouml;nnen Ihren Browser so einstellen, dass Sie &uuml;ber das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, 
+              die Annahme von Cookies f&uuml;r bestimmte F&auml;lle oder generell ausschlie&szlig;en sowie das automatische L&ouml;schen der Cookies beim Schlie&szlig;en des Browsers aktivieren. 
+              Bei der Deaktivierung von Cookies kann die Funktionalit&auml;t dieser Website eingeschr&auml;nkt sein.
+              Welche Cookies und Dienste auf dieser Website eingesetzt werden, k&ouml;nnen Sie dieser Datenschutzerkl&auml;rung entnehmen
+            
+            <h4>Server-Log-Dateien</h4> 
+              Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, 
+              die Ihr Browser automatisch an uns &uuml;bermittelt. Dies sind:<br><br/>
+              
+              <li>Browsertyp und Browserversion</li><br><br/> 
+              <li>verwendetes Betriebssystem</li><br><br/>
+              <li>Referrer URL</li><br><br/> 
+              <li>Hostname des zugreifenden Rechners</li><br><br/> 
+              <li>Uhrzeit der Serveranfrage</li><br><br/> 
+              <li>IP-Adresse</li><br><br/>
+              
+              Eine Zusammenf&uuml;hrung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. 
+              Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. 
+              Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung 
+              und der Optimierung seiner Website &ndash; hierzu m&uuml;ssen die Server-Log-Files erfasst werden.
+            
+            <h4>Anfrage per E-Mail, Telefon oder Telefax</h4> 
+              Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, 
+              wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. 
+              Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. 
+              Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, 
+              sofern Ihre Anfrage mit der Erf&uuml;llung eines Vertrags zusammenh&auml;ngt oder zur Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen erforderlich ist. 
+              In allen &uuml;brigen F&auml;llen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) 
+              oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.
+              Die von Ihnen an uns per Kontaktanfragen &uuml;bersandten Daten verbleiben bei uns, 
+              bis Sie uns zur L&ouml;schung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck f&uuml;r die Datenspeicherung entf&auml;llt 
+              (z.&nbsp;B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen &ndash; insbesondere gesetzliche Aufbewahrungsfristen &ndash; bleiben unber&uuml;hrt.
+            <br><br/> 
+          
+          Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
+          <br><br/> 
+
+        </div>        
+      </div>
+ 
+  
+      <div class="footer"> 
+        <div class="link-container"> 
+          <a class="share-button menu-link" id="shareButton1" href="#" data-page="used"><img src="pictures/used-logo-rgb-buttom.png" alt="Bild 1"></a>
+          <a class="share-button menu-link" id="shareButton4" href="#" data-page="about">imprint</a>
+          <a class="share-button menu-link" id="shareButton3" href="#" data-page="about">privacy</a>
+          <a class="share-button" onclick="openEmail()">contact</a>        
+        </div>
+          
+        <div class="imp-container"><p class="impress">© used.community</p></div>
+      
+      </div>
+
+    </div>
+  </body>
+
 </html>
